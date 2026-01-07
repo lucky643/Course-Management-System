@@ -1,7 +1,13 @@
-import React from "react";
+import axios from "axios";
+import React, {useContext, useState } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { Auth } from "../context/AuthContext";
 
 const Login = () => {
-     const [formData, setFormData] = React.useState({
+     let {login} = useContext(Auth);
+     let navigate = useNavigate();
+     const [formData, setFormData] = useState({
           email: "",
           password: "",
           role: "",
@@ -9,9 +15,19 @@ const Login = () => {
 
 let{email, password, role} = {...formData};
 
-     const submitHandler = (e) => {
+     const submitHandler =async (e) => {
           e.preventDefault();
-          console.log(formData);
+          if(email.trim() && password.trim() && role.trim()){
+               let res = await axios.get(`http://localhost:3000/users?email=${email}&password=${password}&role=${role}`);
+               if(res.data.length > 0){
+                    toast.success("Login Successful!");
+                    console.log(res.data[0])
+                    login(res.data[0]);
+                    navigate("/");
+               } else {
+                    toast.error("Invalid Credentials!");
+               }
+          }
           setFormData({
                email: "",
                password: "",

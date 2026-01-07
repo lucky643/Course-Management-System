@@ -1,6 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { Auth } from "../context/AuthContext";
+import {useContext} from "react";
 
 const Navbar = () => {
+     const {users, logout} = useContext(Auth);
+     console.log(users)
+
      const linkClasses = ({ isActive }) =>
           `px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200
      ${isActive
@@ -35,12 +40,24 @@ const Navbar = () => {
                               <NavLink to="/cart" className={linkClasses}>
                                    Cart
                               </NavLink>
-                              <NavLink to="/login" className={linkClasses}>
+
+                              {
+                              !users && (<NavLink to="/login" className={linkClasses}>
                                    Login
-                              </NavLink>
+                              </NavLink>)
+                              }
+
                               <NavLink to="/signup" className={linkClasses}>
                                    SignUp
                               </NavLink>
+
+                              {users && (
+                                   <button onClick={logout} >
+                                        Logout
+                                   </button>
+                              )}
+
+                              {users && <div>👋{users?.userName}</div>}
                          </div>
 
                     </div>

@@ -1,21 +1,52 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import toast from 'react-hot-toast';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+     let navigate = useNavigate();
      const [formData, setFormData] = React.useState({
           userName: "",
           email: "",
           password: "",
           confirmPassword: "",
-          role: "",
+          role: "user",
           id: uuidv4(),
      });
 
      const { userName, email, password, confirmPassword } = formData;
-
-     const submitHandler = (e) => {
+     
+     const submitHandler = async (e) => {
           e.preventDefault();
-          console.log(formData);
+          let res;
+
+          if (
+               userName.trim() &&
+               email.trim() &&
+               password.trim() &&
+               confirmPassword.trim()
+          ) {
+               if (password === confirmPassword) {
+                    let userAllreadyExist = await axios.get(`http://localhost:3000/users?email=${email}`);
+                    console.log(userAllreadyExist);
+                    if (userAllreadyExist.data.length > 0) {
+                         toast.error("User with this email already exists!");
+                    }
+                    else {
+                         res = await axios.post("http://localhost:3000/users", formData);
+                         console.log(res);
+                         if (res.status == 201) {
+                              toast.success("Account created successfully!");
+                              navigate("/login");
+                         } else {
+                              toast.error("Failed to create account. Please try again.");
+                         }
+                    }
+               }
+          }
+
+
 
           setFormData({
                userName: "",
@@ -27,7 +58,7 @@ const SignUp = () => {
           });
      };
 
-     let changeHandler = (e) =>{
+     let changeHandler = (e) => {
           setFormData({ ...formData, [e.target.name]: e.target.value });
      }
 
@@ -115,5 +146,4 @@ const SignUp = () => {
           </div>
      );
 };
-
 export default SignUp;
