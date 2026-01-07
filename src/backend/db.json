@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "352871ad-b8af-493c-9e9f-c61fbcc23e5d",
+      "userName": "lucky643",
+      "email": "luckylilhore123@gmail.com",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "role": "admin"
+    },
+    {
+      "id": "42cba5b9-f7dd-481d-88ad-cf4806678183",
+      "userName": "lucky",
+      "email": "lucky@123",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "role": "user"
+    },
+    {
+      "id": "4e94cfa1-1a07-4584-9eb7-614daf687ca5",
+      "userName": "ankit",
+      "email": "ankit@123",
+      "password": "1298",
+      "confirmPassword": "1298",
+      "role": "user"
+    }
+  ]
+}
