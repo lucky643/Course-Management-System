@@ -29,13 +29,11 @@ const SignUp = () => {
           ) {
                if (password === confirmPassword) {
                     let userAllreadyExist = await axios.get(`http://localhost:3000/users?email=${email}`);
-                    console.log(userAllreadyExist);
                     if (userAllreadyExist.data.length > 0) {
                          toast.error("User with this email already exists!");
                     }
                     else {
                          res = await axios.post("http://localhost:3000/users", formData);
-                         console.log(res);
                          if (res.status == 201) {
                               toast.success("Account created successfully!");
                               navigate("/login");

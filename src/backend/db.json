@@ -23,8 +23,44 @@
       "password": "1298",
       "confirmPassword": "1298",
       "role": "user"
+    },
+    {
+      "id": "f8aef065-e233-4b35-9ead-11cca8d1e2ee",
+      "userName": "tarun",
+      "email": "tarun@gmail.com",
+      "password": "tarun",
+      "confirmPassword": "tarun",
+      "role": "user"
     }
   ],
-  "Course":[],
-  "Cart":[]
+  "Course": [
+    {
+      "id": "9384",
+      "title": "react",
+      "image": "https://imgs.search.brave.com/CuPoWLlZfxDgBtgA6tavN8neAixGmSMsCNAZhDgrjTw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cGF0dGVybnMuZGV2/L2ltZy9yZWFjdGpz/L3JlYWN0LWxvZ29A/M3guc3Zn",
+      "price": "2450",
+      "duration": "6 week",
+      "author": "Akshay Bhai",
+      "desc": "Akshat sir will take the class "
+    },
+    {
+      "id": "f8ac",
+      "title": "Java",
+      "image": "https://imgs.search.brave.com/JqPLIbtJBvPQCe5OVlOlMR8EUZHPyyuIiymcByM7stk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9qYXZhLWluc2Ny/aXB0aW9uLWFnYWlu/c3QtbGFwdG9wLWNv/ZGUtYmFja2dyb3Vu/ZF81MDU1NTctNDI1/MTguanBnP3NlbXQ9/YWlzX2h5YnJpZCZ3/PTc0MCZxPTgw",
+      "price": "65000",
+      "duration": "1 year",
+      "author": "Lucky ",
+      "desc": "Now today onwords, i'll be the java instructor\n"
+    },
+    {
+      "id": "aa9b",
+      "title": "Java Script",
+      "image": "https://imgs.search.brave.com/DWbEbqXd7bbzgRyaISjQeV-Ncb-WfN0tiNmjao71bUk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9qYXZhc2NyaXB0/LWNvZGUtY29tcHV0/ZXItbGFuZ3VhZ2Ut/cHJvZ3JhbW1pbmct/aW50ZXJuZXQtdGV4/dC1lZGl0b3ItY29t/cG9uZW50c183MzUy/My0xMzUzLmpwZz9z/ZW10PWFpc19oeWJy/aWQmdz03NDAmcT04/MA",
+      "price": "20",
+      "duration": "2 days",
+      "author": "Ahmad Jhatu",
+      "desc": "is jhatu se mat padna, ise kuch nahi ata......!!!!"
+    }
+  ],
+  "Cart": []
 }

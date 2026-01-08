@@ -1,10 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { Auth } from "../context/AuthContext";
-import {useContext} from "react";
+import { useContext } from "react";
 
 const Navbar = () => {
-     const {users, logout} = useContext(Auth);
-     console.log(users)
+     const { users, logout } = useContext(Auth);
 
      const linkClasses = ({ isActive }) =>
           `px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200
@@ -27,37 +26,29 @@ const Navbar = () => {
                          </NavLink>
 
                          {/* Links */}
-                         <div className="flex space-x-2">
-                              <NavLink to="/" className={linkClasses}>
-                                   CourseList
-                              </NavLink>
-                              <NavLink to="/editcourse" className={linkClasses}>
-                                   EditCourse
-                              </NavLink>
-                              <NavLink to="/addcourse" className={linkClasses}>
-                                   AddCourse
-                              </NavLink>
-                              <NavLink to="/cart" className={linkClasses}>
-                                   Cart
-                              </NavLink>
+                         <div className="flex items-center space-x-2">
+                              <NavLink to="/" className={linkClasses}>CourseList</NavLink>
+                              <NavLink to="/editcourse" className={linkClasses}>EditCourse</NavLink>
+                              <NavLink to="/addcourse" className={linkClasses}>AddCourse</NavLink>
+                              <NavLink to="/cart" className={linkClasses}>Cart</NavLink>
 
-                              {
-                              !users && (<NavLink to="/login" className={linkClasses}>
-                                   Login
-                              </NavLink>)
-                              }
-
-                              <NavLink to="/signup" className={linkClasses}>
-                                   SignUp
-                              </NavLink>
+                              {!users && <NavLink to="/login" className={linkClasses}>Login</NavLink>}
+                              {!users && <NavLink to="/signup" className={linkClasses}>SignUp</NavLink>}
 
                               {users && (
-                                   <button onClick={logout} >
+                                   <button
+                                        onClick={logout}
+                                        className="px-4 py-2 rounded-md text-sm font-medium text-red-400 hover:bg-red-600 hover:text-white transition-colors duration-200"
+                                   >
                                         Logout
                                    </button>
                               )}
 
-                              {users && <div>👋{users?.userName}</div>}
+                              {users && (
+                                   <div className="px-3 py-2 text-gray-300">
+                                        👋 {users.userName}
+                                   </div>
+                              )}
                          </div>
 
                     </div>

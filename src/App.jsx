@@ -7,6 +7,7 @@ import Layout from './pages/Layout'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import './App.css'
+import Protected from './routes/Protected'
 
 const App = () => {
   let myRouter = createBrowserRouter([
@@ -16,7 +17,7 @@ const App = () => {
       children:[
         {
           path: "/",
-          element: <CourseList/>
+          element: <Protected><CourseList/></Protected>
         },
         {
           path: "/editcourse",

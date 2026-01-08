@@ -21,7 +21,6 @@ let{email, password, role} = {...formData};
                let res = await axios.get(`http://localhost:3000/users?email=${email}&password=${password}&role=${role}`);
                if(res.data.length > 0){
                     toast.success("Login Successful!");
-                    console.log(res.data[0])
                     login(res.data[0]);
                     navigate("/");
                } else {
