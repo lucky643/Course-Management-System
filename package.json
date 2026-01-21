@@ -4,12 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "server": "json-server --watch src/backend/db.json --port 3000",
-    "dev": "vite",
-    "build": "vite build --output public",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "dev": "vite",
+  "build": "vite build",
+  "start": "vite preview --port $PORT"
+}
+,
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
     "axios": "^1.13.2",
