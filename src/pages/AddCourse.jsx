@@ -2,10 +2,12 @@ import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { v4 } from "uuid";
 
 const AddCourse = () => {
      let navigate = useNavigate();
      const [course, setCourse] = useState({
+          id : v4(),
           title: "",
           image: "",
           price: "",

@@ -20,7 +20,7 @@ const App = () => {
           element: <Protected><CourseList/></Protected>
         },
         {
-          path: "/editcourse",
+          path: "/editcourse/:id",
           element: <EditCourse/>
         },
         {

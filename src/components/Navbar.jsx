@@ -28,8 +28,12 @@ const Navbar = () => {
                          {/* Links */}
                          <div className="flex items-center space-x-2">
                               <NavLink to="/" className={linkClasses}>CourseList</NavLink>
-                              <NavLink to="/editcourse" className={linkClasses}>EditCourse</NavLink>
-                              <NavLink to="/addcourse" className={linkClasses}>AddCourse</NavLink>
+
+                              {users?.role == "admin" && <NavLink to="/editcourse" className={linkClasses}>EditCourse</NavLink>}
+                              {users?.role == "admin" && <NavLink to="/addcourse" className={linkClasses}>AddCourse</NavLink>
+}
+
+
                               <NavLink to="/cart" className={linkClasses}>Cart</NavLink>
 
                               {!users && <NavLink to="/login" className={linkClasses}>Login</NavLink>}

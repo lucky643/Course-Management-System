@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { Auth } from "../context/AuthContext";
 
-const CourseCard = ({ id, title, image, price, duration, author, desc }) => {
+const CourseCard = ({ onDelete, id, title, image, price, duration, author, desc }) => {
+     let { users } = useContext(Auth);
+
      return (
           <div className="group bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
 
@@ -38,6 +42,34 @@ const CourseCard = ({ id, title, image, price, duration, author, desc }) => {
                          <button className="px-4 py-2 text-sm font-medium rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition">
                               View Course
                          </button>
+
+                         {
+                              users?.role == "admin" && (
+                                   <div className="flex items-center gap-2">
+
+                                        <NavLink to={`/editcourse/${id}`}>
+                                             <button
+                                                  className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md
+                                                       hover:bg-blue-700 active:bg-blue-800
+                                                       focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-1
+                                                       transition"
+                                             >
+                                                  Edit
+                                             </button>
+                                        </NavLink>
+
+                                        <button
+                                             className="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md
+                                                  hover:bg-red-700 active:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1 transition"
+                                             onClick={() => onDelete(id)}
+                                        >
+                                             Delete
+                                        </button>
+                                   </div>
+
+                              )
+                         }
+
                     </div>
                </div>
           </div>

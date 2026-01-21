@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "352871ad-b8af-493c-9e9f-c61fbcc23e5d",
-      "userName": "lucky643",
+      "userName": "Lucky",
       "email": "luckylilhore123@gmail.com",
       "password": "1234",
       "confirmPassword": "1234",
@@ -20,7 +20,7 @@
       "id": "4e94cfa1-1a07-4584-9eb7-614daf687ca5",
       "userName": "ankit",
       "email": "ankit@123",
-      "password": "1298",
+      "password": "1234",
       "confirmPassword": "1298",
       "role": "user"
     },
@@ -30,6 +30,14 @@
       "email": "tarun@gmail.com",
       "password": "tarun",
       "confirmPassword": "tarun",
+      "role": "user"
+    },
+    {
+      "id": "63b6ef15-3830-4c83-8b39-d2d4ae19d146",
+      "userName": "aman",
+      "email": "aman@123",
+      "password": "aman123",
+      "confirmPassword": "aman123",
       "role": "user"
     }
   ],
